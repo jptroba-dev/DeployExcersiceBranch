@@ -3,7 +3,7 @@
     <fullName>Nick_Name__c</fullName>
     <externalId>false</externalId>
     <label>Nick Name</label>
-    <length>100</length>
+    <length>101</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Text</type>
