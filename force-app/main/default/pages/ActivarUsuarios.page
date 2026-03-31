@@ -1,0 +1,16 @@
+<apex:page controller="UserActivationByUsernameController">
+    <apex:form >
+        <apex:pageBlock title="Activar Usuario por Username">
+            <apex:pageMessages />
+
+            <apex:pageBlockSection columns="1">
+                <apex:inputText value="{!username}" label="Username del Usuario"/>
+                <apex:commandButton value="Activar" action="{!activateUser}" rerender="msgs"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection id="msgs" columns="1">
+                <apex:pageMessages />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

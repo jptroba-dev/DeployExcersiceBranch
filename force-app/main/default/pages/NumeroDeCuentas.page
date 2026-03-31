@@ -1,0 +1,25 @@
+<apex:page standardController="Account" extensions="AccountExtension">
+    <apex:form >
+        <apex:pageBlock title="Detalle de Cuenta con Extensión">
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Guardar Cambios"/>
+                <apex:commandButton action="{!cancel}" value="Cancelar"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection title="Información Básica" columns="1">
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.Phone}"/> <apex:outputField value="{!Account.Industry}"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Análisis de Contactos" id="contactSection">
+                <apex:commandButton value="Contar Contactos" 
+                                   action="{!countRelatedContacts}" 
+                                   reRender="contactSection"/>
+                
+                <apex:outputText value="Esta cuenta tiene: {!numContacts} contactos asociados." />
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

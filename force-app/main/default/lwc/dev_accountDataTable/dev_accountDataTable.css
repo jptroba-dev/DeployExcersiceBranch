@@ -1,0 +1,25 @@
+.slds-form-element__label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.slds-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    border: 1px solid #d9dce4;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.slds-input:focus {
+    outline: none;
+    border-color: #0070d2;
+    box-shadow: 0 0 0 3px rgba(0, 112, 210, 0.1);
+}
+
+.slds-text-align_center {
+    text-align: center;
+    color: #666;
+}

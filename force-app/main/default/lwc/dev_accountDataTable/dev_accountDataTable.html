@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Account Search" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <!-- Search Input Field -->
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="searchInput">
+                    Search Account
+                </label>
+                <div class="slds-form-element__control">
+                    <input
+                        id="searchInput"
+                        type="text"
+                        class="slds-input"
+                        placeholder="Enter account name..."
+                        value={searchTerm}
+                        onchange={handleSearchChange}
+                    />
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="slds-var-m-top_medium">
+                <template if:true={hasAccounts}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={accounts}
+                        columns={columns}
+                        hide-checkbox-column
+                    ></lightning-datatable>
+                </template>
+                <template if:false={hasAccounts}>
+                    <div class="slds-text-align_center slds-var-m-top_large">
+                        <p class="slds-text-body_regular">{noAccountsMessage}</p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

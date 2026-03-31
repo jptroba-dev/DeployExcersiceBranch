@@ -1,0 +1,37 @@
+<aura:component controller="MyOpportunityController" implements="flexipage:availableForAllPageTypes" access="global" >
+    
+    <!-- Declaring client-side attributes to be used in component -->
+    <aura:attribute name="lstOpportunity" type="Opportunity[]" />
+    <aura:attribute name="columnsToDisplay" type="List" />
+    <aura:attribute name="searchKeyword" type="String" /> 
+    
+    <aura:attribute name="newMessage" type="String" default="Hello there!" />
+    
+    <!-- Method to be called on component initialization can be a constant each aura component -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <h2>{!v.newMessage}</h2> <!-- each component needs to specify if its called from
+ client side or server side, thats why its v.  if its controller its c.SearchOpportunities for example -->
+    
+     <!-- -->
+    <lightning:card iconName="standard:opportunity" title="Opportunity List">
+        
+        <lightning:layout>
+            <lightning:layoutItem size="3" padding="around-small">
+                <lightning:input aura:id="searchField"
+                                 label="Opportunity Name"
+                                 value="{!v.searchKeyword}"
+                                 placeholder="Search Opportunities"
+                                 onchange="{!c.searchOpportunities}" />
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <!-- opportunity list goes here -->
+        <lightning:datatable data="{!v.lstOpportunity}"
+        	columns="{!v.columnsToDisplay}"
+            keyField="Id"
+            hideCheckboxColumn="true"
+                             />
+        
+   </lightning:card>      
+</aura:component>

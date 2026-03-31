@@ -1,0 +1,21 @@
+<template>
+    <div class='slds-m-around_large'>
+    <h1>    Hello World! This is my first Lightning Web Component.</h1>
+    <lightning-input label="Enter your name" required value={inputText} onclick={handleClick}>
+ 
+    </lightning-input> 
+    <p>Hello, {name}!</p>
+
+    <p>{greeting}</p>
+    <p> {inputText}</p>
+
+    <lightning-button label="Click Me" onclick={handleSubmit}></lightning-button>
+    </div>
+    <div class='slds-m-around_large'>
+
+        <template for:each={result} for:item='contact'>
+            <p key={contact.Id}>{contact.Id}</p>
+        </template>
+
+    </div>
+</template>
